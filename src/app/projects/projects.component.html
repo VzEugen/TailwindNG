@@ -1,0 +1,46 @@
+<div class="max-w-7xl mx-auto">
+  <div class="flex justify-evenly mt-5 mb-5">
+    <div class="rounded-lg shadow-lg bg-white max-w-sm" *ngFor="let item of numbers">
+      <a href="#!">
+        <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt=""/>
+      </a>
+      <div class="p-6">
+        <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+        <p class="text-gray-700 text-base mb-4">
+          Some quick example text to build on the card title and make up the bulk of the card's
+          content.
+        </p>
+        <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
+      </div>
+    </div>
+  </div>
+  <div class="w-full bg-gray-200 rounded-full mb-5">
+    <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full"
+         [ngStyle]="{'width': progressBarWidth + '%'}"> {{progressBarWidth}}%
+    </div>
+  </div>
+  <div class="flex flex-col mb-10">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+          <table class="min-w-full">
+            <thead class="bg-white border-b">
+            <tr>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left font-bold" *ngFor="let column of columns">
+                {{column | camelCaseToSentenceCase}}
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100" *ngFor="let user of data">
+              <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap" *ngFor="let userData of user | keyvalue: keepOrder; let isFirst = first" [ngClass]="{'font-bold': isFirst}">
+                {{userData.value}}
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

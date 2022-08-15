@@ -1,0 +1,20 @@
+.hide {
+  animation-name: disappear;
+  animation-duration: .4s;
+  opacity: 0;
+}
+
+.show {
+  animation-name: appear;
+  animation-duration: .4s;
+}
+
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes disappear {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
